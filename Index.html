@@ -1,40 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;700&display=swap" rel="stylesheet">
-        <title>Biel Bank</title>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Img/image1_0.jpg">
+    <title id="Title1">Biel Bank</title>
+     
+        <style>
+
+        </style>
     </head>
     <body>
-        <header>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Informações</a>
-                <a href="http://127.0.0.1:5500/Index.html">Fale Conosco</a> <!-- Link para o formulário -->
-                <a href="#">Mais Informações</a>
-                <a href="#">Orçamento</a>
-            </nav>
-        </header>
-        
+    <header>
+        <nav>
+            <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Mais Informações</a></li>
+            <li><a href="http://127.0.0.1:5500/Index.html">Fale Conosco</a></li>
+            <li><a href="#">Mais Informações</a></li>
+            <li><a href="#">Orçamento</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main class="container">
         <div class="list">
-            <div class="list-item">
-                <img src="https://img.freepik.com/fotos-gratis/retrato-familiar-com-biscoitos-suco_23-2147997417.jpg" alt="foto-Familia">
-                <div class="content">
-                    <h2 class="title">empréstimos</h2>
-                    <p class="description">No Biel Bank, oferecemos soluções financeiras completas para todos os momentos da sua vida. Com taxas competitivas, prazos flexíveis e atendimento personalizado, nossos empréstimos são projetados para se adaptar às suas necessidades. Seja para realizar um sonho, investir no seu negócio ou enfrentar imprevistos, estamos aqui para ajudar. Com segurança, transparência e um processo ágil, garantimos que você tenha a melhor experiência. Junte-se a milhares de clientes satisfeitos e descubra como é fácil transformar planos em realidade com o Biel Bank. Conte conosco para impulsionar o seu futuro financeiro!</p>
-                    <div class="buttons">
-                        <button>Crie Sua Conta</button>
-                        <button>Login</button>
-                    </div>
-                </div>
-            </div>
+        <div class="list-item">
+        <img src="/BIEL-BANK2/Img/image1_0.jpg" alt="foto-Familia">
+        
+        <div class="content">
+        <h2 class="title">empréstimos</h2>
+        <p class="description">No Biel Bank, oferecemos soluções financeiras completas para todos os momentos da sua vida. Com taxas competitivas, prazos flexíveis e atendimento personalizado, nossos empréstimos são projetados para se adaptar às suas necessidades. Seja para realizar um sonho, investir no seu negócio ou enfrentar imprevistos, estamos aqui para ajudar. Com segurança, transparência e um processo ágil, garantimos que você tenha a melhor experiência. Junte-se a milhares de clientes satisfeitos e descubra como é fácil transformar planos em realidade com o Biel Bank. Conte conosco para impulsionar o seu futuro financeiro!</p>
+        <div class="buttons">
+        
+        <form>
+        <h1 id="novo">Criar Usuário</h1>
+        
+        <p>
+            Nome Completo:
+            <input type="text" placeholder="Digite seu Nome" required>
+        </p>
+
+        <p>
+            Valor da Renda Mensal:
+            <input type="number" placeholder="Digite o Valor da Sua Renda" step="0.01" required style="width: 180px;">
+        </p>
+
+        <p>
+            Data de Nascimento
+            <input type="number" placeholder="Digite sua data de Nascimento" required style="width: 180px; align-items: center;">
+        </p>
+
+        <p>
+            Nacionalidade
+           <input type="text" placeholder="Digite sua Nascionalidade" required>
+        </p>
+
+        <p>
+           CPF
+            <input type="number" placeholder="Digite seu CPF" required>
+        </p>
+
+        <p>
+            RG
+            <input type="number" placeholder="Digite seu RG" required>
+        </p>
+        
+        <p>
+            Profissão
+            <input type="text" placeholder="Digite sua Profissão" required>
+        </p>
+
+        <p>
+            Senha
+            <input type="password" placeholder="Digite sua Senha" required minlength="8" maxlength="8" pattern=".{8}" title="A senha deve ter exatamente 8 caracteres.">
+        </p>
+        
+        <p>
+            Confirme Sua Senha
+            <input type="password" placeholder="Confirme sua Senha" required minlength="8" maxlength="8" pattern=".{8}" title="Confirme a senha digitada anteriormente">
+        </p>
+        
+        <p>
+            <input type="submit" value="Criar Usuário">
+        </p>
+              
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        <h3 id="Resp1"></h3>
+        <h3 id="Resp2"></h3>
     </main>
 
-    <script src="./scripts.js"></script>
+<script src="./scripts.js"></script>
 </body>
 </html>
