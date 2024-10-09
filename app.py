@@ -9,7 +9,7 @@ def connect_db():
         host="localhost",      # Host do MySQL
         user="seu_usuario",    # Seu nome de usuário do MySQL
         password="sua_senha",  # Sua senha do MySQL
-        database="nome_do_banco_de_dados"  # O banco de dados onde está a tabela 'usuarios'
+        database="nome_do_banco_de_dados"  # O banco de dados que você criou
     )
 
 @app.route('/add_usuario', methods=['POST'])
@@ -22,7 +22,7 @@ def add_usuario():
         nacionalidade = request.form['Nacionalidade']
         cpf = request.form['CPF']
         rg = request.form['RG']
-        profissao = request.form['profissiao']
+        profissao = request.form['profissao']
         senha = request.form['senha']
 
         # Conecta ao banco de dados MySQL e insere os dados

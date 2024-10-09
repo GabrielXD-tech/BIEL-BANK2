@@ -41,7 +41,7 @@ body {
     box-sizing: border-box;
 }
 
-input[type="submit"] {
+button[type="submit"] {
     background-color: #0ef;
     color: #01003f;
     border: none;
@@ -51,6 +51,6 @@ input[type="submit"] {
     border-radius: 5px;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
     background-color: #00d1b2;
 }

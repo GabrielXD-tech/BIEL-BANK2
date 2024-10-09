@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="Img/img2.png">
     <script src="/js/scripts.js" defer></script>
+    
     <title>Criar Usuário</title>
 </head>
 <body>
@@ -38,19 +39,14 @@
             </p>
             <p class="input-box">
                 Profissão:
-                <input type="text" name="profissiao" placeholder="Digite sua Profissão" required>
+                <input type="text" name="profissao" placeholder="Digite sua Profissão" required>
             </p>
             <p class="input-box">
                 Senha:
                 <input type="password" name="senha" placeholder="Digite sua Senha" required minlength="8" maxlength="8" pattern=".{8}" title="A senha deve ter exatamente 8 caracteres.">
+
             </p>
-            <p class="input-box">
-                Confirme Sua Senha:
-                <input type="password" placeholder="Confirme sua Senha" required minlength="8" maxlength="8" pattern=".{8}" title="Confirme a senha digitada anteriormente">
-            </p>
-        </div>
-        <button type="submit">Criar Usuário</button>
-        <button type="reset">Limpar</button>
     </form>
+    <button type="submit" >Criar Usuário</button>
 </body>
 </html>
