@@ -5,66 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="Img/img2.png">
+    <script src="/js/scripts.js" defer></script>
     <title>Criar Usuário</title>
 </head>
 <body>
     <h1 id="novo">Criar Usuário</h1>
-    
-    <form> <!-- Início do Formulário -->
+    <form action="http://127.0.0.1:5000/add_usuario" method="POST">
         <div class="input-group">
             <p class="input-box">
                 Nome Completo:
-                <input type="text" placeholder="Digite seu Nome" required>
+                <input type="text" placeholder="Digite seu Nome" name="nome" required>
             </p>
-
             <p class="input-box">
                 Valor da Renda Mensal:
-                <input type="text" placeholder="Digite o Valor da Sua Renda" required style="width: 180px;">
+                <input type="text" placeholder="Digite o Valor da Sua Renda" name="renda" required style="width: 180px;">
             </p>
-
             <p class="input-box">
                 Data de Nascimento:
-                <input type="date" required style="width: 180px; align-items: center;">
+                <input type="date" name="data" required style="width: 180px; align-items: center;">
             </p>
-
             <p class="input-box">
                 Nacionalidade:
-                <input type="text" placeholder="Digite sua Nacionalidade" required>
+                <input type="text" name="Nacionalidade" placeholder="Digite sua Nacionalidade" required>
             </p>
-
             <p class="input-box">
                 CPF:
-                <input type="text" placeholder="Digite seu CPF" required pattern="\d{11}" title="Digite um CPF válido com 11 dígitos">
+                <input type="text" name="CPF" placeholder="Digite seu CPF" required pattern="\d{11}" title="Digite um CPF válido com 11 dígitos">
             </p>
-
             <p class="input-box">
                 RG:
-                <input type="text" placeholder="Digite seu RG" required>
+                <input type="text" name="RG" placeholder="Digite seu RG" required>
             </p>
-
             <p class="input-box">
                 Profissão:
-                <input type="text" placeholder="Digite sua Profissão" required>
+                <input type="text" name="profissiao" placeholder="Digite sua Profissão" required>
             </p>
-
             <p class="input-box">
                 Senha:
-                <input type="password" placeholder="Digite sua Senha" required minlength="8" maxlength="8" pattern=".{8}" title="A senha deve ter exatamente 8 caracteres.">
+                <input type="password" name="senha" placeholder="Digite sua Senha" required minlength="8" maxlength="8" pattern=".{8}" title="A senha deve ter exatamente 8 caracteres.">
             </p>
-
             <p class="input-box">
                 Confirme Sua Senha:
                 <input type="password" placeholder="Confirme sua Senha" required minlength="8" maxlength="8" pattern=".{8}" title="Confirme a senha digitada anteriormente">
             </p>
-
-            <p class="input-box">
-                <input type="submit" value="Criar Usuário">
-            </p>
         </div>
-    </form> 
-    <h1 id="Resposta1" style="color: #008000;"></h1> 
-    <h1 id="Resposta2" style="color: red;"></h1>
-
-    <script src="js/scripts.js"></script> 
+        <button type="submit">Criar Usuário</button>
+        <button type="reset">Limpar</button>
+    </form>
 </body>
 </html>
