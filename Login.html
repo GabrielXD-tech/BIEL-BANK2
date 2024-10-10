@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Img/img2.png">
+       <title>Login</title>
+       <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #01003f;
+    color: white; /* Para garantir que o texto seja visível */
+}
+
+.input-group {
+    position: relative;
+    margin: 20px 0;
+    width: 100%; /* Para evitar que o input-group seja muito pequeno */
+    max-width: 400px; /* Definir um limite máximo de largura */
+}
+
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input-box input {
+    width: 100%; /* Agora o input preenche 100% da caixa */
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 15px;
+    background: transparent;
+    border: 1.2px solid #0ef;
+    outline: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #0ef;
+    color: #01003f;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #00d1b2;
+}
+       </style>
+</head>
+<body>
+    <h1 id="novo">Login</h1>
+    <form action="http://127.0.0.1:5000/add_usuario" method="POST">
+        <div class="input-group">
+            <p class="input-box">
+                Login
+                <input type="text" placeholder="Digite seu Usuário" name="nome" required>
+            </p>
+           
+            <p class="input-box">
+                Senha:
+                <input type="password" name="senha" placeholder="Digite sua Senha" required minlength="8" maxlength="8" pattern=".{8}" title="A senha deve ter exatamente 8 caracteres.">
+
+            </p>
+    </form>
+    <button type="submit" >LOGIN</button>
+    <h2></h2>
+</body>
+</html>

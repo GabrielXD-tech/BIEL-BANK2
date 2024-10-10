@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Img/img2.png">
+    <title>BIEL BANK</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            background: #01003f;
+            color: white;
+        }
+
+        .input-group {
+            position: relative;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 40px;
+            font-size: 16px;
+            color: #fff;
+            padding: 0 15px;
+            background: transparent;
+            border: 1.2px solid #0ef;
+            outline: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #0ef;
+            color: #01003f;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #00d1b2;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="novo">Orçamento</h1>
+    <form action="http://127.0.0.1:5000/add_usuario" method="POST">
+        <div class="input-group">
+            <p class="input-box">
+                Renda Mensal
+                <input type="number" placeholder="Digite sua Renda" id="inValue" name="nome" required>
+            </p>
+        </div>
+        <button type="submit">SIMULAR</button>
+    </form>
+    <p>Insira sua Renda e simule já o valor do seu empréstimo</p>
+    <h3></h3>
+    <h4></h4>
+    <h2></h2>
+    <script>
+        const frm = document.querySelector("form");
+        const resp = document.querySelector("h3");
+        const resp1 = document.querySelector("h2");
+        const resp2 = document.querySelector("h4");
+
+        frm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const valor = Number(document.getElementById("inValue").value);
+
+            const emprestimo = valor * 10;
+            const juros = emprestimo + (emprestimo * 0.3);
+            const parcelas = Math.min(juros / 48, 12); // Limitando o número de parcelas a no máximo 12
+            const valorParcelas = juros / parcelas; // Calculando o valor de cada parcela
+
+            resp.innerText = `Valor do empréstimo liberado: R$ ${emprestimo.toFixed(2)}`;
+            resp1.innerText = `Valor dos juros em cima do empréstimo: R$ ${juros.toFixed(2)}`;
+            resp2.innerText = `Número de parcelas: ${Math.ceil(parcelas)} (Valor de cada parcela: R$ ${valorParcelas.toFixed(2)})`;
+        });
+    </script>
+</body>
+</html>
