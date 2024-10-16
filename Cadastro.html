@@ -3,15 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="Img/img2.png">
-    <script src="/js/scripts.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <title>Criar Usuário</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            background: #01003f;
+        }
+        .input-group {
+            max-width: 600px;
+            margin: auto;
+        }
+        .input-box {
+            margin-bottom: 10px;
+        }
+        form {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1 id="novo">Criar Usuário</h1>
-    <form action="http://127.0.0.1:5000/add_usuario" method="POST">
+    
+    <form id="userForm" action="/add_usuario" method="POST">
         <div class="input-group">
             <p class="input-box">
                 Nome Completo:
@@ -23,7 +59,7 @@
             </p>
             <p class="input-box">
                 Data de Nascimento:
-                <input type="date" name="data" required style="width: 180px; align-items: center;">
+                <input type="date" name="data" required>
             </p>
             <p class="input-box">
                 Nacionalidade:
@@ -44,10 +80,34 @@
             <p class="input-box">
                 Senha:
                 <input type="password" name="senha" placeholder="Digite sua Senha" required minlength="8" maxlength="8" pattern=".{8}" title="A senha deve ter exatamente 8 caracteres.">
-
             </p>
+        </div>
+        
+        <button type="button" onclick="saveAsPDF()">Salvar Formulário em PDF</button>
     </form>
-    <button type="submit" >Criar Usuário</button>
-    <h2></h2>
+    
+    <script>
+        async function saveAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Usando html2canvas para capturar o conteúdo do formulário
+            const formElement = document.getElementById('userForm');
+            const canvas = await html2canvas(formElement, {
+                scale: 2, // Aumenta a resolução da imagem para melhor qualidade
+                scrollY: -window.scrollY // Captura a parte não visível se houver rolagem
+            });
+
+            // Adicionando a imagem do formulário ao PDF
+            const imgData = canvas.toDataURL('image/png');
+            const imgWidth = 190; // Largura da imagem no PDF
+            const pageHeight = 295; // Altura da página no PDF
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+            let position = 0;
+
+            doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+            doc.save('formulario_usuario.pdf');
+        }
+    </script>
 </body>
 </html>
